@@ -1,0 +1,49 @@
+#ebay
+
+
+
+[parameters]
+
+# number of threads to be run in parallel, depends on computer parameters
+# try between 1 to 30
+threads = 3
+
+# max number of browsers (should be: browsers <= threads)
+browsers = 3
+
+# browser type: chrome, firefox or phantomjs
+# do not use phantomjs, as it has many bugs
+driver = firefox
+
+# write log into the stream or file
+# should be file or stream
+logging_handler = stream
+
+# output format, should be excel or json
+output_format = excel
+
+# mode
+testing = false
+
+# max number of items to be extracted
+max_items_extract = 5
+
+wait_before_pagination = 2
+wait_after_pagination = 2
+
+[items signatures]
+item_html_tag = div
+item_html_class = search-result-productimage gridview
+pagination_xpath = //*[@id="mainSearchContent"]/div[3]/div[2]/button[2]/span
+
+
+[item xpaths]
+
+price =          //*[@id="prcIsum"]
+title =          //*[@id="itemTitle"]
+average_rating = //*[@id="si-fb"]
+
+[item ids]
+price          = prcIsum         
+title          = itemTitle
+average_rating = si-fb
