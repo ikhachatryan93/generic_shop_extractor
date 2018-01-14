@@ -1,0 +1,4 @@
+
+*.log
+geckodriver.log
+*.log
